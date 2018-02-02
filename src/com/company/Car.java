@@ -6,12 +6,10 @@ public class Car {
     private String make;
     private String carType;
     private String model;
-    private String engine;
     private String gasType;
     private String tireType;
     private boolean gas;
     private boolean engineOn;
-
 
     private int fuelCapacity;
     private int wheels;
@@ -22,12 +20,23 @@ public class Car {
     private int doors;
     private int axle;
 
-    public Car(String make, String carType, String model, String engine, String gasType, String tireType, boolean gas, boolean engineOn, int fuelCapacity, int wheels, int acceleration, int speed, int year, int seats, int doors, int axle) {
+    Scanner  input = new Scanner(System.in);
+
+
+    public Car() {
+
         this.make = make;
+        System.out.println("What is the make of your car?");
+        setModel(input.nextLine());
         this.carType = carType;
+        System.out.println("what is your car type?");
+        setCarType(input.nextLine());
         this.model = model;
-        this.engine = engine;
+        System.out.println("What is your car model?");
+        setModel(input.nextLine());
         this.gasType = gasType;
+        System.out.println("Diesel or Unleaded?");
+        setGasType(input.nextLine());
         this.tireType = tireType;
         this.gas = gas;
         this.engineOn = engineOn;
@@ -63,14 +72,6 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
     }
 
     public String getGasType() {
